@@ -1,11 +1,11 @@
-import math
+from math import fsum
 from data import elements_dict, electron_mass, elem_part, const
 from functions import reaction_energy, threshold_energy
 
-a = input("Enter your element: ").upper()
-b = input("Enter your element: ").upper()
-c = input("Enter your element: ").upper()
-d = input("Enter your element: ").upper()
+a = input("Enter your element (A): ").upper()
+b = input("Enter your element (B): ").upper()
+c = input("Enter your element (C): ").upper()
+d = input("Enter your element (D): ").upper()
 
 if (a and b and c and d) in elements_dict or elem_part:
     if {a, b, c, d} <= set(elem_part.keys()) | set(elements_dict.keys()):
@@ -29,15 +29,17 @@ if (a and b and c and d) in elements_dict or elem_part:
     else:
         element4 = elements_dict[d]
         r4 = element4[1] - element4[0] * electron_mass
-    e = reaction_energy(math.fsum([r1, r2]), math.fsum([r3, r4]), const)
+    e = reaction_energy(fsum([r1, r2]), fsum([r3, r4]), const)
     t = threshold_energy(e, r1, r2)
     if e < 0:
-        input(f'Реакция {a.lower()} + {b.lower()} => {c.lower()} + {d.lower()} является эндотермической.\n'
-              f'Энергетический выход реакции: {e:.5f} МэВ.\n'
-              f'Пороговая энергия бомбардирующей частицы ({a.lower()}): {t:.5f} МэВ.')
+        input(f'Reaction {a.lower()} + {b.lower()} => {c.lower()} + {d.lower()} is edonthermic.\n'
+              f'Energy yield reaction: {e:.5f} MeV.\n'
+              f'Threshold energy of bombarding particle ({a.lower()}): {t:.5f} MeV.'
+              f'\nPress any key to continue...')
     if e > 0:
-        input(f'Реакция {a.lower()} + {b.lower()} => {c.lower()} + {d.lower()} является экзотермической.\n'
-              f'Энергетический выход реакции: {e:.5f} МэВ.\n'
-              f'Пороговая энергия бомбардирующей частицы ({a.lower()}): {t:.5f} МэВ.')
+        input(f'Реакция {a.lower()} + {b.lower()} => {c.lower()} + {d.lower()} is exothermic.\n'
+              f'Energy yield reaction: {e:.5f} MeV.\n'
+              f'Threshold energy of bombarding particle ({a.lower()}): {t:.5f} MeV.'
+              f'\nPress any key to continue...')
 else:
-    input('Element not found.')
+    input('Element not found...')
