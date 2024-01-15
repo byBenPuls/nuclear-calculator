@@ -1,5 +1,7 @@
 const isotopes = require('./data/isotopes.json')
 
+const constant = 931.493614838475
+
 
 exports.getRadius = (name) => {
     const isotope = name.toUpperCase ()
@@ -34,4 +36,8 @@ exports.getInfo = (name) => {
     } else {
         return 'not found'
     }
+}
+
+exports.u_to_mev = (u) => {
+    return u * constant
 }
