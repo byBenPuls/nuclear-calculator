@@ -12,6 +12,10 @@ def reaction_energy(e1, e2, e3, e4, convertationconst):
 # Measured in MeV
 
 
+def reaction_energy4(e1, e2, e3, e4, e5, convertationconst):
+    return (fsum([e1, e2]) - fsum([e3, e4, e5])) * convertationconst
+
+
 def threshold_energy(q, e1, e2):
     return abs(q) * (1 + (e1 / e2))
 
