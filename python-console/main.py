@@ -3,13 +3,21 @@ from functions import reaction_energy, threshold_energy, atom_info, u_to_mev, re
 
 empty = ['', ' ']
 
-main = int(input('1 - Calculate energy yield reaction\n'
-                 '2 - Give info about a definite atom\n'
-                 '3 - Mass conversion in u to MeV\n'
-                 'Select a number: '))
+menu = {
+    '1': 'Calculate energy yield reaction',
+    '2': 'Give info about a definite atome',
+    '3': 'Mass conversion in u to MeV',
+    '4': 'Instructions and feedback'
+}
+
+print('_________________________________________')
+for key, value in menu.items():
+    print('{r:2s}| {w:5s} '.format(r=key, w=value))
+print('-----------------------------------------\n')
+main = int(input('Select a number: '))
 
 if main == 1:
-    print('Reaction like this:\n'
+    print('\nReaction like this:\n'
           'A + B => C + D\n'
           'A + B => C + D + E\n')
     a = input(f"Enter your element (A): ").upper()
@@ -112,6 +120,20 @@ if main == 3:
     u = int(input('Enter a mass in u for conversation to MeV: '))
     input(f'{u} u - {u_to_mev(u, const)} MeV\n'
           f'Press any key to continue...')
+if main == 4:
+    print('Mode 1:'
+          '\n\nYou can calculate energy rection yield. '
+          'This program can calculate reaction like this:\n'
+          'A + B => C + D\n'
+          'A + B => C + D + E\n'
+          'If your reaction have more coefficients, then do not try calculate in this program. '
+          'The operation is not supported yet.\nProgram calculating energy reaction yield and if '
+          'energy reaction is < 0, then program calculating minimum threshold bombarding particle.'
+          '\n\nMode 2:'
+          '\n\nProgram can give information about an isotope..'
+          '\n\nMode 3:'
+          '\n\nConversion from u to MeV')
+    input('\nPress any key to continue...')
 else:
     input('Your selected number does not exist\n'
           'Press any key to continue... ')
