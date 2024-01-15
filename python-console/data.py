@@ -1,7 +1,9 @@
 elements_dict = {
     'H-1': ['Hydrogen', 1, 1.007825031898, True],
     'H-2': ['Hydrogen', 1, 2.014101777844, True],
+    'D': ['Hydrogen', 1, 2.014101777844, True],
     'H-3': ['Hydrogen', 1, 3.016049281320, False],
+    'T': ['Hydrogen', 1, 3.016049281320, False],
     'H-4': ['Hydrogen', 1, 4.02643, False],
     'H-5': ['Hydrogen', 1, 5.03531, False],
     'H-6': ['Hydrogen', 1, 6.04496, False],
@@ -9,6 +11,7 @@ elements_dict = {
     'HE-2': ['Helium', 2, 2.015894, False],
     'HE-3': ['Helium', 2, 3.016029321967, True],
     'HE-4': ['Helium', 2, 4.002603254130, True],
+    'A': ['Helium', 2, 4.002603254130, True],
     'HE-5': ['Helium', 2, 5.012057, False],
     'HE-6': ['Helium', 2, 6.01888589, False],
     'HE-7': ['Helium', 2, 7.027991, False],
@@ -200,6 +203,6 @@ elements_particle = {
 
 electron_mass = 5.4858e-4
 
-const = 931.494
+const = 931.493614838475
 
 radius_const = 1.12
