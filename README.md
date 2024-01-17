@@ -7,6 +7,5 @@
 ### Result:
 
 ![image 2](https://imgur.com/kzgrF9w.png)
-
 ## Formulas used:
 ![form1](http://nuclphys.sinp.msu.ru/reactions/timages/t2_2.gif)           ![form2](http://nuclphys.sinp.msu.ru/reactions/timages/t2_14a.gif)
