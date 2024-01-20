@@ -1,5 +1,6 @@
 from math import pow, fsum
-
+import os
+import sys
 
 def u_to_mev(u, const):
     return u * const
@@ -45,3 +46,7 @@ def atom_info(nuclear_charge, mass_number, const, name, stable_check, isotope_na
           f'\nNucleus radius is: {round(radius, 3)} Fm.'
           f'\nThis isotope is {stability[stable_check]}.'
           f'\n\nPress enter to continue...')
+
+
+def after(text):
+    input(text)
