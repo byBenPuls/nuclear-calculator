@@ -1,5 +1,3 @@
-import sys
-
 from data.elements import *
 from functions.functions import *
 from data.special import *
@@ -22,8 +20,8 @@ else:
     time.sleep(2)
 
 
-    def display_progress_bar(iteration, total, bar_length=50):
-        progress = (iteration / total)
+    def display_progress_bar(iteration, all_procent, bar_length=50):
+        progress = (iteration / all_procent)
         arrow = '=' * int(round(progress * bar_length) - 1)
         spaces = ' ' * (bar_length - len(arrow))
 
@@ -53,7 +51,7 @@ elif main_language == 'ru':
 print('_________________________________________')
 for key, value in menu.items():
     print('{r:2s}| {w:5s} '.format(r=key, w=value))
-    print('-----------------------------------------\n')
+print('-----------------------------------------\n')
 main = int(input(menu_text))
 
 if main == 1:
@@ -176,6 +174,7 @@ elif main == 2:
             input(after[0])
         else:
             print(errors[1])
+            input(after[0])
     except Exception as err:
         input(f'{errors[1]}\n\n{err}')
 elif main == 3:
