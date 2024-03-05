@@ -19,5 +19,7 @@
     "url": "https://github.com/byBenPuls/nuclear-calculator/issues"
   },
   "homepage": "https://github.com/byBenPuls/nuclear-calculator/tree/main#readme",
-  "files": [ "./data/isotopes.json" ]
+  "files": [
+    "data/isotopes.json"
+  ]
 }
